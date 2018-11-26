@@ -1,12 +1,56 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  <ion-list mode="md">
+    <ion-list-header>
+      <ion-label>Biodata</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-avatar slot="start">
+          <img [src]="'../../assets/banner/banner1.png'">
+        </ion-avatar>
+        <ion-label>
+          <h2>Finn</h2>
+          <h3>I'm a big deal</h3>
+          <p>Listen, I've had a pretty messed up day...</p>
+        </ion-label>
+    </ion-item>
+
+    <ion-item  (click)="goToInbox()" >       
+      <ion-icon name="mail-unread" slot="start"></ion-icon>
+      <ion-label>Surat masuk</ion-label>      
+      <ion-badge color="primary" >11</ion-badge>
+    </ion-item>   
+      
+    <ion-item  (click)="goTo('outbox')" >       
+      <ion-icon name="mail" slot="start"></ion-icon>
+      <ion-label>Surat keluar</ion-label>      
+      <ion-badge color="primary" >11</ion-badge>
+    </ion-item>
+
+    <ion-item  (click)="goTo('user')" >       
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-label>Daftar User</ion-label>      
+      <ion-badge color="primary" >11</ion-badge>
+    </ion-item>
+
+    <ion-item  (click)="goTo('psoap')" >       
+        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-label>service soap</ion-label>      
+        <ion-badge color="primary" >11</ion-badge>
+    </ion-item>
+
+    <ion-item  (click)="logout()">
+      <ion-icon name="power" slot="start"></ion-icon>
+      <ion-label>Log out</ion-label>
+    </ion-item>
+ 
+  </ion-list>
+  <ion-button color="primary" expand="full" (click)="goTo('compose')">Buat Surat</ion-button>
+  <ion-button [routerLink]="['/psoap']" expand="full">another href/click</ion-button>
 </ion-content>
